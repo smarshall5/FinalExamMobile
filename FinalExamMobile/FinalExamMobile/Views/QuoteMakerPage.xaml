@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FinalExamMobile.Views.QuoteMakerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="35" VerticalOptions="StartAndExpand">
+                <Label Text="Make a Quote:" />
+                <Entry Placeholder=" Enter Quote" x:Name="NewQuote" Keyboard="Chat" />
+                <Entry Placeholder=" Enter Author" x:Name="NewAuthor" Keyboard="Chat" />
+                <Entry Placeholder=" Enter Category" x:Name="NewCategory" Keyboard="Chat" />
+                <Entry Placeholder=" Enter Image URL" x:Name="NewImage" Keyboard="Chat" />
+                <Button Text="Save" Clicked="OnSaveClicked" />
+            </StackLayout>
+
+            <ListView x:Name="ListView" Margin="20" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="30,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding quote}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" TextColor="Black" FontSize="Large" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
